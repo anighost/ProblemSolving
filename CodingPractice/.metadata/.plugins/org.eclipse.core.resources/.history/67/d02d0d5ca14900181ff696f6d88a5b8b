@@ -1,0 +1,40 @@
+package problems;
+
+/* Find first recurring character in a String
+ * Example: 
+ * 	1. "ABCA" -> "A" 
+ * 	2. "BCABA" -> "B"
+ * 	3. "ABC" -> "Not Found"
+ */
+public class RecurringChar {
+	
+	public String FindRecurring(String inputStr) {
+		
+		/*
+		 * 1. Create Empty String
+		 * 2. Iterate though each character in input String. Find the character in checkString.
+		 * 3. If exists return the character  
+		 * 4. If reach the end of String, return "Not Found".
+		 */
+		String notFoundStr = "Not Found";
+		String checkString = "";
+		
+		for (int i = 0; i < inputStr.length(); i++) {
+			if (checkString.indexOf(inputStr.charAt(i)) > 0) { //Character Exists. Return
+				return Character.toString(inputStr.charAt(i));
+			} else { //Does not exist. Add character to checkString
+				checkString = checkString+Character.toString(inputStr.charAt(i));
+			}
+			
+		}
+		
+		
+		return outputStr;
+		
+	}
+	
+	public static void main(String [] args) {
+		
+	}
+
+}
