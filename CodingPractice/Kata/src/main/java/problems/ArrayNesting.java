@@ -54,10 +54,36 @@ public class ArrayNesting {
     	return k;
     }
 
-	public static void main(String[] args) {
+    private static int arrayNestingOpt(int[] nums) {
+    	
+    	int k = 0;
+
+    	for (int i = 0; i < nums.length; i++) {
+    		if (nums[i] >= 0) {
+        		int j = i;
+        		int count = 0;
+        		while (nums[j] >= 0) {
+        			int temp = j;
+        			j = nums[j];
+        			nums[temp] = -1;
+        			count++;
+        		}
+        		
+        		k = Math.max(k, count);
+    		}
+    	}
+    	
+    	return k;
+    }
+
+    public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] nums1 = {5,4,0,3,1,6,2};
 		System.out.println("Expected result : 4 Actual resul : "+arrayNesting(nums1));
+		System.out.println("Expected result : 4 Actual resul : "+arrayNestingOpt(nums1));
+		int [] nums2 = {0};
+		System.out.println("Expected result : 1 Actual resul : "+arrayNesting(nums2));
+		System.out.println("Expected result : 1 Actual resul : "+arrayNestingOpt(nums2));
 
 	}
 
