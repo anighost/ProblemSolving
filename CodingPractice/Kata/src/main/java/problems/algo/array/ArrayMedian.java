@@ -1,4 +1,4 @@
-package problems;
+package problems.algo.array;
 
 public class ArrayMedian {
 	/**

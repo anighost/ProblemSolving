@@ -1,4 +1,4 @@
-package problems;
+package problems.algo.misc;
 /**
  * 
  * 	You are given two non-empty linked lists representing two non-negative integers. 
@@ -67,6 +67,12 @@ public class AddTwoNumbers {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+	      String Str = new String("bb");
+
+	      System.out.print("Return Value :" );
+	      System.out.println(Str.substring(0, 1) );
+	      System.out.println(1001/1000);
+	      
 
 	}
 

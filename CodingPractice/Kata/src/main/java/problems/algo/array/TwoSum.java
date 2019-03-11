@@ -1,4 +1,4 @@
-package problems;
+package problems.algo.array;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -58,7 +58,32 @@ public class TwoSum {
         
     }
 
-	public static void main(String[] args) {
+//    public static int[] twoSumOptWOHash(int[] nums, int target) {
+//        Arrays.sort(nums);
+//        int len = nums.length;
+//        int i = 0;
+//        int j = len - 1;
+//        int [] out = new int[2];
+//        
+//        while(i < j) {
+//            if(nums[i]+nums[j] == target) {
+//                out[0] = i;
+//                out[1] = j;
+//                return out;
+//            }
+//            
+//            if(nums[i]+nums[j] > target) {
+//                j--;
+//            } else {
+//                i++;
+//            }
+//        }
+//        
+//        throw new IllegalArgumentException("No Solution");
+//        
+//    }
+
+    public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] nums1 = {2, 7, 11, 15};
 		int target1 = 9;
@@ -67,6 +92,11 @@ public class TwoSum {
 
 		int [] return2 = twoSumOpt(nums1, target1);
 		System.out.println(return2[0] + " , "+ return2[1]);
+
+		int [] nums3 = {3,2,4};
+		int target3 = 6;
+		int [] return3 = twoSumOpt(nums3, target3);
+		System.out.println(return3[0] + " , "+ return3[1]);
 	}
 
 }
