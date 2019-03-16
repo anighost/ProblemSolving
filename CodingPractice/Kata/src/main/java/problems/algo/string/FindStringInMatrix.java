@@ -32,9 +32,9 @@ public class FindStringInMatrix {
 		
 		//Found
 		if(k == str.length() - 1) {
-			m_Solution[row][col] = m_Path++;
 			return true;
 		}
+		m_Solution[row][col] = m_Path++;
 
 		//Mark Current Cell in Solution Matrix
 		m_Solution[row][col] = m_Path++;
