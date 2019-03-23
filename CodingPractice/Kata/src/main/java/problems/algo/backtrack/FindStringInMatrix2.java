@@ -105,7 +105,7 @@ public class FindStringInMatrix2 {
 					};
 		
 		FindStringInMatrix2 f = new FindStringInMatrix2();
-//		System.out.println(f.exist(matrix, "ABCCED"));
+		System.out.println(f.exist(matrix, "ABCCED"));
 		System.out.println(f.exist(matrix1, "BBABAB"));
 
 	}
