@@ -1,4 +1,4 @@
-package problems.algo.string;
+package problems.algo.backtrack;
 
 public class FindStringInMatrix2 {
     

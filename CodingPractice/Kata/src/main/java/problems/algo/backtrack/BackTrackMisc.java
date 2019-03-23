@@ -1,4 +1,4 @@
-package problems.algo.misc;
+package problems.algo.backtrack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
