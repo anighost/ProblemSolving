@@ -1,8 +1,10 @@
 package problems.algo.misc;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class Play {
 
@@ -44,6 +46,31 @@ public class Play {
 		System.out.println(1^0);
 		System.out.println(1^1);
 		
+		Comparator<Integer> intComp = new 	Comparator<Integer>() {
+
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				// TODO Auto-generated method stub
+				return o2 - o1;
+			}
+			
+		};
+		PriorityQueue<Integer> pq  = new PriorityQueue<Integer>(intComp);
+		pq.add(10);
+		pq.add(6);
+		pq.add(4);
+		pq.add(8);
+		
+
+        Iterator itr = pq.iterator(); 
+        while (itr.hasNext()) 
+            System.out.println("queue element : "+itr.next()); 
+        
+        System.out.println(pq.poll());
+        System.out.println(pq.poll());
+        System.out.println(pq.poll());
+        System.out.println(pq.poll());
+
 	}
 
 }
