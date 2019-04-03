@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 public class Play {
 
 	public static void main(String[] args) {
-		String s = "MCMXCIV";
+//		String s = "MCMXCIV";
 		// M -> 0
 		// CM -> 1
 		// XC -> 3
@@ -62,7 +62,8 @@ public class Play {
 		pq.add(8);
 		
 
-        Iterator itr = pq.iterator(); 
+        @SuppressWarnings("rawtypes")
+		Iterator itr = pq.iterator(); 
         while (itr.hasNext()) 
             System.out.println("queue element : "+itr.next()); 
         

@@ -134,8 +134,8 @@ public class MergeKSortedArray {
 			q = q.next;
 		}
 		
-		int [] a = null ;
-		a[0] = 1;
+//		int [] a = null ;
+//		a[0] = 1;
 
 	}
 
