@@ -71,6 +71,13 @@ public class Play {
         System.out.println(pq.poll());
         System.out.println(pq.poll());
         System.out.println(pq.poll());
+        
+        String s = "SS"+null;
+        System.out.println(s+null);
+        
+        StringBuilder sb = new StringBuilder();
+        
+        System.out.println("SB : " + sb.toString());
 
 	}
 

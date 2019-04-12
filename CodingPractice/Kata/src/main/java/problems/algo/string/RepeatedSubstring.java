@@ -21,6 +21,8 @@ package problems.algo.string;
 	Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
  *
  */
+
+//TODO: Complete method/ KNP
 public class RepeatedSubstring {
 	
     static boolean repeatedSubstringPattern(String s) {
