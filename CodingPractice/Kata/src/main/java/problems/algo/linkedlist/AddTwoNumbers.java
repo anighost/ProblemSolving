@@ -1,4 +1,4 @@
-package problems.algo.misc;
+package problems.algo.linkedlist;
 /**
  * 
  * 	You are given two non-empty linked lists representing two non-negative integers. 

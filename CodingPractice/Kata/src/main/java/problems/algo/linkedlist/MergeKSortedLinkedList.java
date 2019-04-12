@@ -1,4 +1,4 @@
-package problems.algo.array;
+package problems.algo.linkedlist;
 
 /**
  * 
@@ -17,7 +17,7 @@ package problems.algo.array;
  *
  */
 
-public class MergeKSortedArray {
+public class MergeKSortedLinkedList {
 
 	public class ListNode {
 		int val;
@@ -97,7 +97,7 @@ public class MergeKSortedArray {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ListNode[] list = new ListNode[3];
-		MergeKSortedArray m = new MergeKSortedArray();
+		MergeKSortedLinkedList m = new MergeKSortedLinkedList();
 		m.new ListNode(1);
 		ListNode l1 = m.new ListNode(1);		
 		l1.next = m.new ListNode(4);
