@@ -35,11 +35,12 @@ public class Codec2 {
 		TreeNode right;
 		TreeNode(int x) { val = x; }
 	}
-	//TODO: Make it more optimized
-	
+
+	//TODO: Try with Queue and iterative
 	// Encodes a tree to a single string.
 	public String serialize(TreeNode root) {		
-		return dfsSerialize(root, "");
+		//return dfsSerialize(root, "");
+		return dfsSerializeOptimized(root, "");
 	}
 
 	// Decodes your encoded data to tree.
@@ -49,37 +50,18 @@ public class Codec2 {
 		if(data == null || data.isEmpty()) {
 			return null;
 		}
-		
+
 		String[] chArr = data.split(delim);
 		List<String> chList = new ArrayList<String>(Arrays.asList(chArr));
 
-		return recurConstructTree(chList);
-	}
-	
-	public TreeNode recurConstructTree(List<String> chList) {
-		final String nullStr = "X";
-		//Value of node
-		String val = chList.get(0);
-		chList.remove(0);
-		//null check - null node
-		//recursion break
-		if (nullStr.equals(val)) {
-			return null;
-		}
-		TreeNode node = new TreeNode(Integer.parseInt(val));
-		
-		//call with node.left
-		node.left = recurConstructTree(chList);
-		//call with node.right
-		node.right = recurConstructTree(chList);
-		
-		return node;
-		
+		//return recurConstructTree(chList);
+		return recurConstructTreeOptimized(chList);
 	}
 
-	//DFS Pre Order
+
+	//DFS Pre Order - Serialize
 	public String dfsSerialize(TreeNode node, String str) {
-		
+
 		//break recursion
 		if(node == null) {
 			str += "X,";
@@ -92,13 +74,87 @@ public class Codec2 {
 			//right
 			str = dfsSerialize(node.right,str);
 		}
-		
+
 		return str;
 	}
 
-//	public String bfsSerialize(TreeNode root, String str) {
-//
-//	}
+	public String dfsSerializeOptimized(TreeNode node, String str) {
+
+		//break recursion
+		if(node == null) {
+			str += "X,";
+		} else {
+			//append value to string
+			str += node.val+",";
+			//check if leaf node
+			if(node.left == null && node.right == null) {
+				str += "',";
+			} else {
+				//recursion
+				//left 
+				str = dfsSerializeOptimized(node.left,str);
+				//right
+				str = dfsSerializeOptimized(node.right,str);
+			}
+		}
+
+		return str;
+	}
+
+	//Deserialize
+	public TreeNode recurConstructTree(List<String> chList) {
+		final String nullStr = "X";
+		//Value of node
+		String val = chList.get(0);
+		chList.remove(0);
+		//null check - null node
+		//recursion break
+		if (nullStr.equals(val)) {
+			return null;
+		}
+		TreeNode node = new TreeNode(Integer.parseInt(val));
+
+		//call with node.left
+		node.left = recurConstructTree(chList);
+		//call with node.right
+		node.right = recurConstructTree(chList);
+
+		return node;
+
+	}
+
+	public TreeNode recurConstructTreeOptimized(List<String> chList) {
+		String nullStr = "X";
+		String leafChar = "'";
+		//Value of node
+		String val = chList.get(0);
+		chList.remove(0);
+		//null check - null node
+		//recursion break
+		if (nullStr.equals(val)) {
+			return null;
+		}
+		TreeNode node = new TreeNode(Integer.parseInt(val));
+
+		//check for leaf
+		if (chList.get(0).equals(leafChar)) {
+			node.left = null;
+			node.right = null;
+			chList.remove(0);
+		} else {
+			//call with node.left
+			node.left = recurConstructTreeOptimized(chList);
+			//call with node.right
+			node.right = recurConstructTreeOptimized(chList);
+		}
+
+		return node;
+
+	}
+	//	public String bfsSerialize(TreeNode root, String str) {
+	//
+	//	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Codec2 c = new Codec2();
@@ -115,7 +171,7 @@ public class Codec2 {
 
 		String str = c.serialize(root);
 		System.out.println(str);
-		
+
 		TreeNode node = c.deserialize(str);
 		System.out.println(node.toString());
 

@@ -32,10 +32,19 @@ public class Fibonacci {
 		
 	}
 	
+	static int recFib(int n) {
+		if(n <= 1) {
+			return 1;
+		}
+		return recFib(n - 1) + recFib(n - 2);
+	}
+	
 	public static void main (String [] args) {
 		getFibonacci(10);
 		System.out.println();
 		getFibonacciWOArr(10);
+		System.out.println();
+		System.out.println(recFib(10));
 	}
 
 }
