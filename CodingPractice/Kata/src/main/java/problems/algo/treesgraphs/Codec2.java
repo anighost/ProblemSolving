@@ -1,7 +1,7 @@
 package problems.algo.treesgraphs;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -36,11 +36,13 @@ public class Codec2 {
 		TreeNode(int x) { val = x; }
 	}
 
-	//TODO: Try with Queue and iterative
 	// Encodes a tree to a single string.
-	public String serialize(TreeNode root) {		
+	public String serialize(TreeNode root) {
+		StringBuilder sb = new StringBuilder();
 		//return dfsSerialize(root, "");
-		return dfsSerializeOptimized(root, "");
+		dfsSerializeOptimized(root, sb);
+		
+		return sb.toString();
 	}
 
 	// Decodes your encoded data to tree.
@@ -52,7 +54,7 @@ public class Codec2 {
 		}
 
 		String[] chArr = data.split(delim);
-		List<String> chList = new ArrayList<String>(Arrays.asList(chArr));
+		List<String> chList = new LinkedList<String>(Arrays.asList(chArr));
 
 		//return recurConstructTree(chList);
 		return recurConstructTreeOptimized(chList);
@@ -78,32 +80,32 @@ public class Codec2 {
 		return str;
 	}
 
-	public String dfsSerializeOptimized(TreeNode node, String str) {
+	public void dfsSerializeOptimized(TreeNode node, StringBuilder sb) {
 
 		//break recursion
 		if(node == null) {
-			str += "X,";
+			sb.append("X,");
 		} else {
 			//append value to string
-			str += node.val+",";
+			sb.append(node.val+",");
 			//check if leaf node
 			if(node.left == null && node.right == null) {
-				str += "',";
+				sb.append("',");
 			} else {
 				//recursion
 				//left 
-				str = dfsSerializeOptimized(node.left,str);
+				dfsSerializeOptimized(node.left,sb);
 				//right
-				str = dfsSerializeOptimized(node.right,str);
+				dfsSerializeOptimized(node.right,sb);
 			}
 		}
 
-		return str;
+//		return sb;
 	}
 
 	//Deserialize
 	public TreeNode recurConstructTree(List<String> chList) {
-		final String nullStr = "X";
+		String nullStr = "X";
 		//Value of node
 		String val = chList.get(0);
 		chList.remove(0);
