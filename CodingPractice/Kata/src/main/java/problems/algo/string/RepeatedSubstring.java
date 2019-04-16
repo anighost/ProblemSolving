@@ -22,29 +22,46 @@ package problems.algo.string;
  *
  */
 
-//TODO: Complete method/ KNP
+//KMP
 public class RepeatedSubstring {
 	
     static boolean repeatedSubstringPattern(String s) {
     	
-    	//identify the substring
-    	StringBuilder sb = new StringBuilder();
-    	char initChar = s.charAt(0);
-    	boolean isBreak = false;
-    	for (int i = 1; i < s.length(); i++) {
-    		char currChar = s.charAt(i);
-    	}
-        
+    	//construct KMP lps array
+    	int len = s.length();
+    	int [] lps = new int[len];
     	
-    	return false;
+    	int i = 1, j = 0;
+    	lps[0] = 0;
+    	
+    	while (i < len) {
+    		
+    		if (s.charAt(i) == s.charAt(j)) {
+    			lps[i] = j + 1;
+    			i++;
+    			j++;
+    		} else {
+    			if (j != 0) {
+    				j = lps[j - 1];
+    			} else {
+    				i++;
+    			}
+    		}
+    	}
+    	
+    	if (lps[len -1] > 0 && len%(len - lps[len -1]) == 0) {
+    		return true;
+    	} else {
+        	return false;
+    	}
     }
 
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(repeatedSubstringPattern("abab"));
 		System.out.println(repeatedSubstringPattern("aba"));
 		System.out.println(repeatedSubstringPattern("abcabcabcabc"));
+		System.out.println(repeatedSubstringPattern("abaabaa"));
 
 	}
 
