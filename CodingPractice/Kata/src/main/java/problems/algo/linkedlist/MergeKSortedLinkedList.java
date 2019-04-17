@@ -56,7 +56,7 @@ public class MergeKSortedLinkedList {
 			interval *= 2;
 		}
 
-		return lists[0];
+        return (len > 0 ? lists[0] : null);
 
 	}
 

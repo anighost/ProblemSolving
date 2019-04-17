@@ -43,6 +43,7 @@ public class RepeatedStringMatch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(repeatedStringMatch("a", "aa"));
+		System.out.println(repeatedStringMatch("x", "aa"));
 
 	}
 

@@ -7,6 +7,16 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class Play {
+	
+    public static int get(int s, int N) {
+        // Given a square num s, return board coordinates (r, c) as r*N + c
+        int quot = (s-1) / N;
+        int rem = (s-1) % N;
+        int row = N - 1 - quot;
+        int col = row % 2 != N % 2 ? rem : N - 1 - rem;
+        return row * N + col;
+    }
+
 
 	public static void main(String[] args) {
 //		String s = "MCMXCIV";
@@ -78,7 +88,11 @@ public class Play {
         StringBuilder sb = new StringBuilder();
         
         System.out.println("SB : " + sb.toString());
-
+        
+        System.out.println(get(10,4));
+        
+        
+        
 	}
 
 }
