@@ -49,11 +49,17 @@ public class SquareSortedArray {
 
 	public static void main(String[] args) {
 		int [] nums = {-6, -3, -1, 2, 4, 5};
+		int [] nums2 = {-6, -3, -1};
 		int [] outNums = squareArray(nums);
 		for (int i = 0; i < outNums.length; i++) {
 			System.out.print(outNums[i]+" ");
 		}
+		System.out.println();
 
+		int [] outNums2 = squareArray(nums2);
+		for (int i = 0; i < outNums2.length; i++) {
+			System.out.print(outNums2[i]+" ");
+		}
 	}
 
 }
