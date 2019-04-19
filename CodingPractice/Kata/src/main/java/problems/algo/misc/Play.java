@@ -91,6 +91,11 @@ public class Play {
         
         System.out.println(get(10,4));
         
+        int k = 7;
+        k %= 10;
+        
+        System.out.println(k);
+        
         
         
 	}
