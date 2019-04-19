@@ -29,7 +29,7 @@ public class RotatedSortedArray {
         if(nums[l] <= nums[mid]) {
             //binary search
             if(nums[l] <= target && target < nums[mid]) {
-                return binarySearh(l,mid,target,nums);
+                return binarySearh(l,mid-1,target,nums);
             } else {
                 return binarySearh(mid+1,r,target,nums);
             }
@@ -37,7 +37,7 @@ public class RotatedSortedArray {
         } else if (nums[r] > nums[mid]) {
             //binary search
             if(nums[mid] < target && target <= nums[r]) {
-                return binarySearh(mid,r,target,nums);
+                return binarySearh(mid+1,r,target,nums);
             } else {
                 return binarySearh(l,mid-1,target,nums);
             }
