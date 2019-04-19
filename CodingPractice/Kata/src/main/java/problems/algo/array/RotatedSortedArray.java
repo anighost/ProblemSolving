@@ -3,7 +3,7 @@ package problems.algo.array;
 public class RotatedSortedArray {
     public static int search(int[] nums, int target) {
         //1. nums[l] <= nums[mid] --> left side is sorted. do a binary search on left side if target < nums[mid]
-        //2.if nums[mid] < nums[r] -- > right side is sorted. binary search on rihght side if target > nums[mid]
+        //2.if nums[mid] < nums[r] -- > right side is sorted. binary search on right side if target > nums[mid]
         
         if (nums.length == 0) {
             return -1;
@@ -53,12 +53,6 @@ public class RotatedSortedArray {
 		search(nums, 0);
 		System.out.println(search(nums, 0));
 		
-		
-		String s= "AAAA[123 -0400]BBBB";
-		String tsStr = s.substring(s.indexOf('[')+1, s.indexOf(']'));
-		String tzDelim = " -";
-		
-		System.out.println(tsStr.substring(0,tsStr.indexOf(tzDelim)));;
 		
 	}
 
