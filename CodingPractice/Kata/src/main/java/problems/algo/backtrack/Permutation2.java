@@ -25,6 +25,8 @@ import java.util.Set;
  */
 public class Permutation2 {
 	
+	private List<List<Integer>> result = new ArrayList<List<Integer>>();
+	
 	public List<List<Integer>> permuteUnique(int[] nums) {
 		Set<List<Integer>> outSet = new HashSet<List<Integer>>();
 		List<Integer> numList = new ArrayList<Integer>();
@@ -37,7 +39,7 @@ public class Permutation2 {
         return new ArrayList<List<Integer>>(outSet);
     }
 	
-	void recurPermute(int first, int len, List<Integer> numList, Set<List<Integer>> outSet) {
+	private void recurPermute(int first, int len, List<Integer> numList, Set<List<Integer>> outSet) {
 		
 		if(first == len) {
 			outSet.add(new ArrayList<Integer>(numList));
@@ -50,12 +52,49 @@ public class Permutation2 {
 		}
 	}
 
+    public List<List<Integer>> permuteUniqueVisited(int[] nums) {
+    	
+    	boolean [] visited = new boolean[nums.length];
+    	recurPermuteUniqueVisited(nums, new ArrayList<Integer>(), result, visited);
+    	return result;
+        
+    }
+    
+    private void recurPermuteUniqueVisited(int[] nums, List<Integer> permuteList, 
+    		List<List<Integer>>  result, boolean [] visited) {
+    	
+    	//break
+    	if (permuteList.size() == nums.length) {
+    		result.add(new ArrayList<Integer>(permuteList));
+    		return;
+    	}
+    	
+    	//check each num in nums
+    	for (int i = 0; i < nums.length; i++) {
+    		if (visited[i]) continue;
+    		
+    		//eliminate duplicate
+            if (i > 0 && visited[i - 1] && nums[i] == nums[i - 1]) 
+            	continue;
+
+    		//mark visited
+    		visited[i] = true;
+    		permuteList.add(nums[i]);
+    		//call recursion
+    		recurPermuteUniqueVisited(nums, permuteList, result, visited);
+    		//backtrack
+    		visited[i] = false;
+    		permuteList.remove(permuteList.size() - 1);
+    	}
+    }
+	
 	public static void main(String[] args) {
 		
 		Permutation2 p = new Permutation2();
 		
 		int [] nums = new int [] {1,1,2};
 		System.out.println(p.permuteUnique(nums));
+		System.out.println(p.permuteUniqueVisited(nums));
 	}
 
 }

@@ -1,5 +1,7 @@
 package problems.algo.array;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +42,26 @@ public class TwoSum {
         return sumArray;
     }
 
+    public static int[] twoSumAlt(int[] nums, int target) {
+        int [] sumArray = new int [2];
+        Arrays.sort(nums);
+        
+        int i = 0, j = nums.length-1;
+        while (i < j) {
+            if (nums[i] + nums[j] == target) {
+    			sumArray[0] = i;
+    			sumArray[1] = j;
+    			return sumArray;
+            }
+    			
+            if ((nums[i] + nums[j]) < target) {
+                i++;
+            } else {
+                j--;
+            }
+        }
+        return sumArray;
+    }
     public static int[] twoSumOpt(int[] nums, int target) {
         Map<Integer, Integer> numMap = new HashMap<>();
         
@@ -89,6 +111,9 @@ public class TwoSum {
 		int target1 = 9;
 		int [] return1 = twoSum(nums1, target1);
 		System.out.println(return1[0] + " , "+ return1[1]);
+
+		int [] return11 = twoSumAlt(nums1, target1);
+		System.out.println(return11[0] + " , "+ return11[1]);
 
 		int [] return2 = twoSumOpt(nums1, target1);
 		System.out.println(return2[0] + " , "+ return2[1]);

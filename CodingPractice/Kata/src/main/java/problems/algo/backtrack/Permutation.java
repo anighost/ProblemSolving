@@ -24,6 +24,7 @@ import java.util.List;
  *
  */
 public class Permutation {
+	List<List<Integer>> result = new ArrayList<List<Integer>>();
 	
     public List<List<Integer>> permute(int[] nums) {
     	
@@ -40,8 +41,16 @@ public class Permutation {
     	return outList;
         
     }
+
+    public List<List<Integer>> permuteVisited(int[] nums) {
+    	
+    	boolean [] visited = new boolean[nums.length];
+    	recurPermuteVisited(nums, new ArrayList<Integer>(), result, visited);
+    	return result;
+        
+    }
     
-    void recurSwap(int first, int len, List<Integer> numsList, List<List<Integer>> outList) {
+    private void recurSwap(int first, int len, List<Integer> numsList, List<List<Integer>> outList) {
     	
     	if (first == len)
     		outList.add(new ArrayList<Integer>(numsList));
@@ -53,7 +62,28 @@ public class Permutation {
     		recurSwap(first+1, len, numsList, outList);
     		//backtrack
     		Collections.swap(numsList, first, i);
-
+    	}
+    }
+    
+    private void recurPermuteVisited(int[] nums, List<Integer> permuteList, 
+    		List<List<Integer>>  result, boolean [] visited) {
+    	
+    	//break
+    	if (permuteList.size() == nums.length) {
+    		result.add(new ArrayList<Integer>(permuteList));
+    	}
+    	
+    	//check each num in nums
+    	for (int i = 0; i < nums.length; i++) {
+    		if (visited[i]) continue;
+    		//mark visited
+    		visited[i] = true;
+    		permuteList.add(nums[i]);
+    		//call recursion
+    		recurPermuteVisited(nums, permuteList, result, visited);
+    		//backtrack
+    		visited[i] = false;
+    		permuteList.remove(permuteList.size() - 1);
     	}
     }
 
@@ -62,6 +92,7 @@ public class Permutation {
 		Permutation p = new Permutation();
 		int [] nums = new int[] {1,2,3};
 		System.out.println(p.permute(nums));
+		System.out.println(p.permuteVisited(nums));
 
 	}
 
