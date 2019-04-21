@@ -1,0 +1,185 @@
+String::::
+1.How would you square each element in a sorted array of ascending integers while still maintaining the order?
+2. longest palindrome in string — Greedy approach -- DP
+3. search String -- implement indexof
+4. String methods —— Substring,contains,indexOf
+5. reverse String recursion --
+6. compute all permutation of String --
+7. String has unique characters --
+8. longest palindromic substring --
+9. palindrome partition -- DP
+10. uniquely identify repeating  strings in array
+11. how to search in skip list.
+12.  Anagrams in string
+13. reverse the sentence --
+14. permutation of String --
+15. check if string compiles with common pattern.(224610—>N2= N1+N) --
+16. print the oldest and newest repeating characters of string
+17. given  string to open and close brackets return whether numbers inside matches or not
+18. longest substring without repeat
+19. longest common substring --
+20. shortest palindrome
+21. Sort array of String
+22. longest substring without repeating characters(String)
+23. The first question is a coding question to finish a program that can group the same anagrams together. The second one is a follow-up behind the first, it's said that now the input file is 10GB in the disk and the limitation is memory only has 2 GB. Give a solution that could group anagrams together by using the memory and output result into a file in disk. 
+24. Write a function that takes a string and returns a list of lists with all possible substring combinations based on a given list of acceptable substrings. Words cannot repeat. 
+25. Check whether two strings are equivalent or not according to given condition
+
+Tree:::
+1. pre/in/post order traversal --
+2.invert btree --
+3. kth smallest elemenet -- bst
+4.btree longest consecutive sequence --
+5.flatten tree to list. --
+6.path sum (bfs and dfs) --
+7.sorted array/list to btree -- bst
+8. minimum depth of tree(recursion and iterative). --
+9. maximum path sum and print the path--
+10.balanced btree--
+11.btree right side view --
+12. lowest/least common ancestor(pointer from root not present. design tree and write method which returns lca/lca for two given nodes of a tree)--
+13. pre order serialization of btree ?
+14. unique bst(dfs)
+15. sum root to leaf(dfs) (Both normal and binary values) --
+16. count complete tree nodes --
+17. btree path
+18. maximum depth of btree --
+19. same tree --
+20. implement trie…add and search words
+22. bst neighbor ???
+23. closest node of bst
+24. mirror tree --
+25. check if a tree is bst
+26. check one tree is sub tree of another --
+27. max/min elements in btree --
+28. Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum. --
+29. btree path print.(left view) ----
+30. Given a complete binary tree, count the number of nodes. --
+31. Print K path sum in Btree --
+32. distance between two node of a btree --
+
+Given a list of people with each person’s birth year and death year, find the year with the highest population(https://github.com/myyk/cracking-the-coding-interview-6th/blob/master/src/main/java/com/github/myyk/cracking/Chapter16Solutions.java)
+
+Given two strings, s and b, find all permutations of S within B
+
+List:::
+1. merge two sorted list --
+2. check doubly linked list circular —P ?
+3. remove duplicates from sorted list + remove the original items —P --
+4. intersection of two sorted list
+5. reverse linked list/double linked list --
+6. remove nth row from end of list --
+7. palindrome linked list
+8. delete node from a list --
+9. pair wise swap elements from linked list —P
+10. print middle element of linkedList
+12. to remove every multiple of i,j,k elements from a list—P
+13. remove element from linked list. do it without additional memory used.—P
+
+
+DS:::
+1. hash map implement— try with variable key
+2. Stack
+3. Vector
+4. List implementation
+5. hashset implementation internals
+6. comparator in tree map
+7. implement stack using queue/ queue using stack
+8. time and space complexity
+9. best data structure to find the max and min—-use stack
+1. Given a graph and a node in the graph, return a deep copy of the node.
+2. Given a frequency distribution of objects, write a random object generator which produces objects based on their probability distribution. 
+
+Array:::
+1. set matrix zeroes --
+2. find regions in matrix and count of elements --
+3. search 2d matrix --
+4. number of islands --
+5. surrounded regions --
+6. median of two sorted array --
+7. kth largest element in an array --
+8. merge sorted array--
+9. longest valid parenthesis --
+10. implement strStr (String) --
+11. longest consecutive sequence --
+12. reversing of array --
+13. maximum sub array --
+14. binary search in sorted matrix --
+15. given a circular rotated array find an element --
+16. rotate an integer array with length k --
+17. Write a program to find the longest path in a 2D array, given that you can move from point A to point B if and only if A<=B and A, B are adjacent and share the same row or column.
+18. longest line of consecutive one in the matrix --
+19. Longest Increasing Path in a Matrix --
+20. move of a robot --
+ 
+
+
+
+Algo:::
+
+1. BFS, DFS
+2. Searching
+3. sorting(merge/quick/bucket)
+4. max contiguous sum
+5. connected graphs
+6. longest common subsequence
+7. halting problem
+
+
+Math:::
+1. palindrome number
+2. reverse number
+3. pow(x,n)
+4. count primes
+5. get sum using minimum combinations of numbers
+6. find if a rectangle overlap with other
+7. check if given series is fibonacci or not
+8. Given am hour find the angel between hour and minute hand
+9. Token Bucket 
+10. biased coin results
+11. Paranthesis checker --
+12. stock buy and sell
+
+
+Java:::
+1. customized comparator
+2. different ways of writing singleton—private constructor to through already created exception for reflection
+3. design patterns
+4. memory allocation
+5. multithreading
+6. how java passes value
+7. can u place a set inside a map
+8. design a cache system
+9. hash table and collision
+10. final keyword
+11. treemap comparator
+12. design a parking structure
+13. Design custom iterator
+14. Design a lift
+15, juint for singleton
+16, design a vending machine
+17. inuit for thread safety
+
+system::
+1. overall system design.
+2. memory management
+3. os details
+
+
+u have to complete the function kDifference which takes an array A of n unique positve integers and an integer k as arguments and returns the count the total pairs of numbers whose difference is k
+maximum difference for a pair of elements in some array a is defined as the largest difference between any a[i] and a[j] where i<j and a[i] < a[j]
+
+
+Amazon:——
+1. Find subarray with max sum. Array have both -ve and +ve integers.
+2. Given a string and integer k, in-place rearrange the string such that last n-k characters comes before the first k characters.
+Ex: abcdef and k=3, so result is : defabc
+3.Given a binary tree, sum all the root to leaf nodes and return the sum.
+4. Given a large file having strings(for understanding, given an array of strings). Find the string which repeats the most. Ignore the case.
+5.2. Given the link-list and integer value ‘k’, reverse every k nodes of the list.
+Ex. k = 3, list: 1-2-3-4-5-6-7-8
+ans: 3-2-1-6-5-4-8-7
+6.Given a binary tree with each node having parent pointers. Find the LCA of two nodes.
+7.Given a 2-D grid, number of steps to take, say k and intial position of a Robot. print the paths possible from initial position after k steps. Robot can move in top, right, left, bottom. In one path, robot can’t move to the location it has previously visited.
+8.Check if a binary tree is balanced. Balance criteria was difference of height between left and right subtree should be <= 1. 3. Given a binary tree, a node of that tree, and integer k. Print all the nodes which are at distance k from that node. NOTE: there is no parent pointer in the node.
+9. Given a string, count all the palindromes in that string. Only consider substring palindromes.
