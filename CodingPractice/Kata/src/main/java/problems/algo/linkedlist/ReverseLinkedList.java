@@ -41,8 +41,22 @@ public class ReverseLinkedList {
 		
 		return prev;
 		
+	}
+	
+	public ListNode reverseListRecur(ListNode head) {
+		
+		if (head == null| head.next == null) {
+			return head;			
+		}
+		
+		ListNode nextNode = reverseListRecur(head.next);
+		head.next.next = head;
+		head.next = null;
+		
+		return nextNode;
 		
 	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ReverseLinkedList r = new ReverseLinkedList();
@@ -57,7 +71,8 @@ public class ReverseLinkedList {
 		l3.next = l4;
 		System.out.println(head);
 		
-		System.out.println(r.reverseList(head));
+//		System.out.println(r.reverseList(head));
+		System.out.println(r.reverseListRecur(head));
 
 	}
 
