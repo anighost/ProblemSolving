@@ -32,7 +32,7 @@ public class SubSet {
     public List<List<Integer>> subsets(int[] nums) {
     	List<List<Integer>> outList = new ArrayList<List<Integer>>();
     	
-    	Arrays.sort(nums);
+    	Arrays.sort(nums); //Needed??
     	backTrackSubSet(nums, new ArrayList<Integer>(), 0, outList);
     	
         return outList;
