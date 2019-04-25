@@ -1,4 +1,4 @@
-package problems.algo.misc;
+package problems.algo.recursion;
 
 import java.util.ArrayList;
 /*

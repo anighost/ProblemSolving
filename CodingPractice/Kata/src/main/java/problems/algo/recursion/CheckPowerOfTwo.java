@@ -1,4 +1,4 @@
-package problems.algo.misc;
+package problems.algo.recursion;
 
 public class CheckPowerOfTwo {
 
