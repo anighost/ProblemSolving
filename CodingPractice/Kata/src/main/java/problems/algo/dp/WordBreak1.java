@@ -1,4 +1,4 @@
-package problems.algo.string;
+package problems.algo.dp;
 
 import java.util.ArrayList;
 import java.util.Arrays;

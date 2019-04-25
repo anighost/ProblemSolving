@@ -1,4 +1,4 @@
-package problems.algo.backtrack;
+package problems.algo.dp;
 
 import java.util.HashMap;
 import java.util.Map;
