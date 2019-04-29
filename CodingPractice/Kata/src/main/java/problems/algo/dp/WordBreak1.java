@@ -42,6 +42,7 @@ public class WordBreak1 {
     		return false;
     	}
     	
+    	//Use queue
     	Queue<Integer> queue = new LinkedList<Integer>();
     	queue.add(0);
     	
