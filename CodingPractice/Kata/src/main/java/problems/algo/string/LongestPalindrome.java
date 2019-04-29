@@ -48,6 +48,8 @@ public class LongestPalindrome {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		LongestPalindrome l = new LongestPalindrome();
+		System.out.println(l.longestPalindrome("abba"));
 
 	}
 
