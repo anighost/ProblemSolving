@@ -25,7 +25,6 @@ public class ThreeSumSmaller {
 		return res;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ThreeSumSmaller cl = new ThreeSumSmaller();
 		int [] nums = new int [] {-2,0,1,3};
 		System.out.println(cl.threeSumSmaller(nums, 2));
