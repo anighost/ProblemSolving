@@ -21,8 +21,8 @@ public class Parenthesis1 {
         
         for(int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            //first time - stack is empty
             if(charMap.get(c) != null) {
+                //first time - stack is empty
                 char open = stack.isEmpty()? 'X' : stack.pop();
                 if(open != charMap.get(c)) return false;
             } else {
