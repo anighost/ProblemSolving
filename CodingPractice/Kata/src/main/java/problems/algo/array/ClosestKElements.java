@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class ClosestKElements {
 
+	//Efficient
 	public List<Integer> findClosestElements(int[] arr, int k, int x) {
 		
         int start = 0, end = arr.length-k;
@@ -27,6 +28,25 @@ public class ClosestKElements {
         }
         return results;
 	}
+	
+	//Inefficient
+	public List<Integer> findClosestElementsAlt(int[] arr, int k, int x) {
+		List<Integer> res = new ArrayList<Integer>();
+		
+		for (int i = 0; i <arr.length; i++) {
+			if(res.size() < k) {
+				res.add(arr[i]);
+			} else {
+				//compare the distance of res.get(0) with arr[i] from x
+				if(Math.abs(x - res.get(0)) > Math.abs(x-arr[i])) {
+					//remove res.get(0) and add arr[i]
+					res.remove(0);
+					res.add(arr[i]);
+				}
+			}
+		}
+		return res;
+	}
 
 	public static void main(String[] args) {
 		ClosestKElements c = new ClosestKElements();
@@ -36,6 +56,11 @@ public class ClosestKElements {
 				
 		int [] arr2 = new int [] {1,3,4,5,6,9,100,1000};
 		System.out.println(c.findClosestElements(arr2, 3, 6));
+		System.out.println(c.findClosestElementsAlt(arr2, 3, 6));
+
+		int [] arr3 = new int [] {0,0,0,1,3,5,6,7,8,8};
+		System.out.println(c.findClosestElements(arr3, 2, 2));
+		System.out.println(c.findClosestElementsAlt(arr3, 2, 2));
 	}
 
 }
