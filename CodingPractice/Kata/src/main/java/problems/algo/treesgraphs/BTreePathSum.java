@@ -1,17 +1,12 @@
 package problems.algo.treesgraphs;
 
+import problems.algo.utils.TreeNode;
+
 /*
  * https://leetcode.com/problems/path-sum/
  */
 public class BTreePathSum {
 
-	// Definition for a binary tree node.
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
 	public boolean hasPathSum(TreeNode root, int sum) {
 
 //		if(totalNodeSum(root) == sum) return true;
@@ -47,12 +42,12 @@ public class BTreePathSum {
 		// TODO Auto-generated method stub
 		BTreePathSum bt = new BTreePathSum();
 		
-		TreeNode root = bt.new TreeNode(5);
+		TreeNode root = new TreeNode(5);
 		//left side
-		TreeNode l = bt.new TreeNode(4);
-		TreeNode ll = bt.new TreeNode(11);
-		TreeNode lll = bt.new TreeNode(7);
-		TreeNode llr = bt.new TreeNode(2);
+		TreeNode l = new TreeNode(4);
+		TreeNode ll = new TreeNode(11);
+		TreeNode lll = new TreeNode(7);
+		TreeNode llr = new TreeNode(2);
 		ll.left = lll;
 		ll.right = llr;
 		l.left = ll;
@@ -61,7 +56,7 @@ public class BTreePathSum {
 		//right side
 		
 
-		TreeNode r = bt.new TreeNode(4);
+		TreeNode r = new TreeNode(4);
 		root.left = l;
 		root.right = r;
 		

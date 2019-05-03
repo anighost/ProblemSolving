@@ -3,6 +3,8 @@ package problems.algo.treesgraphs;
 import java.util.ArrayList;
 import java.util.List;
 
+import problems.algo.utils.TreeNode;
+
 /*
  * Given a binary tree, imagine yourself standing on the right side of it, 
  * return the values of the nodes you can see ordered from top to bottom.
@@ -22,13 +24,6 @@ import java.util.List;
 
 public class BTRightView {
 
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
-	
 	public List<Integer> rightSideView(TreeNode root) {
 		List<Integer> results = new ArrayList<Integer>();
 		traverse(root,results,0);

@@ -1,18 +1,10 @@
 package problems.algo.treesgraphs;
 
+import problems.algo.utils.TreeNode;
+
 public class MirrorBinaryTree {
 
 	TreeNode root; 
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-
-		public TreeNode(int x) {
-			val = x;
-		}
-	}
 
 	public static TreeNode mirrorTree(TreeNode node) {
 
@@ -59,11 +51,11 @@ public class MirrorBinaryTree {
 	public static void main(String[] args) {
         /* creating a binary tree and entering the nodes */
 		MirrorBinaryTree tree = new MirrorBinaryTree(); 
-        tree.root = tree.new TreeNode(1); 
-        tree.root.left = tree.new TreeNode(2); 
-        tree.root.right = tree.new TreeNode(3); 
-        tree.root.left.left = tree.new TreeNode(4); 
-        tree.root.left.right = tree.new TreeNode(5); 
+        tree.root = new TreeNode(1); 
+        tree.root.left = new TreeNode(2); 
+        tree.root.right = new TreeNode(3); 
+        tree.root.left.left = new TreeNode(4); 
+        tree.root.left.right = new TreeNode(5); 
   
         /* print inorder traversal of the input tree */
         System.out.println("Inorder traversal of input tree is :"); 

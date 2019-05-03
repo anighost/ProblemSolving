@@ -31,12 +31,15 @@ package problems.algo.recursion;
 
 public class KthSymbol {
     public int kthGrammar(int N, int K) {
-        
-    	return 0;
+        return Integer.bitCount(K - 1) % 2;
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		KthSymbol cl = new KthSymbol();
+		
+		System.out.println(cl.kthGrammar(2, 2));
+		System.out.println(cl.kthGrammar(3, 2));
+		System.out.println(cl.kthGrammar(5, 2));
+		System.out.println(cl.kthGrammar(6, 2));
 	}
 
 }

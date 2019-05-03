@@ -3,14 +3,10 @@ package problems.algo.treesgraphs;
 import java.util.ArrayList;
 import java.util.List;
 
+import problems.algo.utils.TreeNode;
+
 public class BSTTargetSum {
 
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
 	public boolean findTarget(TreeNode root, int k) {
 		List<Integer> treeList = new ArrayList<Integer>();
 		treeList = treeToList(root,treeList);

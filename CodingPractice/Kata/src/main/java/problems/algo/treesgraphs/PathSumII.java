@@ -7,16 +7,12 @@ package problems.algo.treesgraphs;
 import java.util.ArrayList;
 import java.util.List;
 
+import problems.algo.utils.TreeNode;
+
 public class PathSumII {
 	List<List<Integer>> result = new ArrayList<List<Integer>>();
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
 
-    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+	public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<Integer> list = new ArrayList<Integer>();
         traverse(root, list, sum);
         return result;

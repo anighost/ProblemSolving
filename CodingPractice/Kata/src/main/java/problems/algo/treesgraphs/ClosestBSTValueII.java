@@ -3,17 +3,12 @@ package problems.algo.treesgraphs;
 import java.util.LinkedList;
 import java.util.List;
 
+import problems.algo.utils.TreeNode;
+
 /*
  * https://leetcode.com/problems/closest-binary-search-tree-value-ii/
  */
 public class ClosestBSTValueII {
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
 
 	LinkedList<Integer> res = new LinkedList<>();
 

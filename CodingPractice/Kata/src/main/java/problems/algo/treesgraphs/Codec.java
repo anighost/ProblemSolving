@@ -1,5 +1,7 @@
 package problems.algo.treesgraphs;
 
+import problems.algo.utils.TreeNode;
+
 /**
  * 
  * Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, 
@@ -25,12 +27,6 @@ as "[1,2,3,null,null,4,5]"
 
 public class Codec {
 
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
 	// Encodes a tree to a single string.
 	public String serialize(TreeNode root) {		
 		return dfsSerialize(root, "");
@@ -68,14 +64,14 @@ public class Codec {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Codec c = new Codec();
-		TreeNode root = c.new TreeNode(1);
-		TreeNode left1 = c.new TreeNode(2);
-		TreeNode right1 = c.new TreeNode(3);
+		TreeNode root = new TreeNode(1);
+		TreeNode left1 = new TreeNode(2);
+		TreeNode right1 = new TreeNode(3);
 		root.left = left1;
 		root.right = right1;
 
-		TreeNode left2 = c.new TreeNode(4);
-		TreeNode right2 = c.new TreeNode(5);
+		TreeNode left2 = new TreeNode(4);
+		TreeNode right2 = new TreeNode(5);
 		root.right.left = left2;
 		root.right.right = right2;
 

@@ -6,14 +6,9 @@ package problems.algo.treesgraphs;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RootToLeafSum {
+import problems.algo.utils.TreeNode;
 
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
+public class RootToLeafSum {
 
 	List<Integer> list = new ArrayList<Integer>();
 
@@ -49,10 +44,10 @@ public class RootToLeafSum {
 	}
 	public static void main(String[] args) {
 		RootToLeafSum cl = new RootToLeafSum();
-		TreeNode root = cl.new TreeNode(1);
+		TreeNode root = new TreeNode(1);
 		
-		TreeNode l = cl.new TreeNode(2);
-		TreeNode r = cl.new TreeNode(3);
+		TreeNode l = new TreeNode(2);
+		TreeNode r = new TreeNode(3);
 		root.left = l;
 		root.right = r;
 		
