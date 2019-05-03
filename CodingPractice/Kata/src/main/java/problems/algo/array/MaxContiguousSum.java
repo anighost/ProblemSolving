@@ -23,16 +23,15 @@ public class MaxContiguousSum {
     	//keep adding to max_till_here
     	//if nums[i] > max_till here then max_till_here = nums[i]
     	
-    	int max_till_here = nums[0];
-    	int max_sum = nums[0];
-    	
-    	for (int i = 1; i < nums.length; i++) {
-    		max_till_here += nums[i];
-    		max_till_here = Math.max(max_till_here, nums[i]);
-    		max_sum = Math.max(max_sum, max_till_here);
-    	}
+        int maxSum = nums[0];
+        int sum_till_here = nums[0];
         
-    	return max_sum;
+        for (int i = 1; i < nums.length; i++) {
+            sum_till_here = Math.max(sum_till_here+nums[i], nums[i]);
+            maxSum = Math.max(maxSum, sum_till_here);
+        }
+        
+        return maxSum;
     }
     
 	public static void main(String[] args) {

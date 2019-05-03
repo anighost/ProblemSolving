@@ -1,5 +1,7 @@
 package problems.algo.array;
 
+import problems.algo.utils.CommonUtils;
+
 /*
  * 	https://leetcode.com/problems/product-of-array-except-self/
 
@@ -53,22 +55,22 @@ public class ProductOfArray {
 		return res;
 	}
 
-	private void printArray(int [] nums) {
-		System.out.println();
-		for (int i = 0; i < nums.length; i++) {
-			System.out.print(nums[i]+" ");
-		}
-
-		System.out.println();
-	}
+	//	private void printArray(int [] nums) {
+	//		System.out.println();
+	//		for (int i = 0; i < nums.length; i++) {
+	//			System.out.print(nums[i]+" ");
+	//		}
+	//
+	//		System.out.println();
+	//	}
 
 	public static void main(String[] args) {
 		ProductOfArray p = new ProductOfArray();
 		int[] nums = new int [] {1,2,3,4};
 		int[] res1 = p.productExceptSelfBrute(nums);
-		p.printArray(res1);
-				int[] res2 = p.productExceptSelf(nums);
-				p.printArray(res2);
+		CommonUtils.printArray(res1);
+		int[] res2 = p.productExceptSelf(nums);
+		CommonUtils.printArray(res2);
 
 	}
 
