@@ -6,68 +6,127 @@ package problems.algo.array;
 	Your algorithm's runtime complexity must be in the order of O(log n).
 
 	If the target is not found in the array, return [-1, -1].
-	
+
 	Example 1:
-	
+
 	Input: nums = [5,7,7,8,8,10], target = 8
 	Output: [3,4]
 	Example 2:
-	
+
 	Input: nums = [5,7,7,8,8,10], target = 6
 	Output: [-1,-1]
  *
  */
 public class FindFirstNLastSortedArr {
 
-    public int[] searchRange(int[] nums, int target) {
-        
-        int [] outArr = new int[2];
-        outArr[0] = getFirst(nums, target, 0, nums.length-1);
-        outArr[1] = getLast(nums, target, 0, nums.length-1);
-        
-        return outArr;
-    }
-    
-    int getFirst(int [] nums, int target, int l , int r) {
-        
-        int mid = (l+r)/2;
-        
-        if (r >= l) {
-            if((mid == 0 || nums[mid - 1] < target ) && (nums[mid] == target)) {
-                return mid;
-            } else if (nums[mid] < target) {
-                return getFirst(nums,target,mid+1,r);
-            } else {
-                return getFirst(nums,target,l,mid-1);
-            }
-        }
-        
-        return -1;
-    }
-    
-    int getLast(int[] nums, int target, int l , int r) {
-        int mid = (l+r)/2;
-        
-        if (r >= l) {
-            if((mid == nums.length - 1 || nums[mid + 1] > target ) && (nums[mid] == target)) {
-                return mid;
-            } else if (nums[mid] > target) {
-                return getLast(nums,target,l,mid-1);
-                
-            } else {
-                return getLast(nums,target,mid+1,r);
-            }
-        }
-        
-        return -1;
-    }    
+	public int[] searchRange(int[] nums, int target) {
+
+		int [] outArr = new int[2];
+		//        outArr[0] = getFirst(nums, target, 0, nums.length-1);
+		//        outArr[1] = getLast(nums, target, 0, nums.length-1);
+
+		outArr[0] = searchLeft(nums, 0, nums.length-1, target);
+		outArr[1] = searchRight(nums, 0, nums.length-1, target);
+
+		return outArr;
+	}
+
+	int getFirst(int [] nums, int target, int l , int r) {
+
+		int mid = (l+r)/2;
+
+		if (r >= l) {
+			if((mid == 0 || nums[mid - 1] < target ) && (nums[mid] == target)) {
+				return mid;
+			} else if (nums[mid] < target) {
+				return getFirst(nums,target,mid+1,r);
+			} else {
+				return getFirst(nums,target,l,mid-1);
+			}
+		}
+
+		return -1;
+	}
+
+	int getLast(int[] nums, int target, int l , int r) {
+		int mid = (l+r)/2;
+
+		if (r >= l) {
+			if((mid == nums.length - 1 || nums[mid + 1] > target ) && (nums[mid] == target)) {
+				return mid;
+			} else if (nums[mid] > target) {
+				return getLast(nums,target,l,mid-1);
+
+			} else {
+				return getLast(nums,target,mid+1,r);
+			}
+		}
+
+		return -1;
+	}
+
+	private int searchLeft(int[] nums, int start, int end, int target) {
+
+		while (start <= end) {
+			int mid = start + (end - start)/2;
+			if (nums[mid] == target) {
+				//search more
+				if (mid == 0 || nums[mid -1] != target) {
+					//mid is the starting point
+					return mid;
+				} else {
+					end = mid - 1;
+				}
+			} else if(nums[mid] > target) {
+				//search left
+				end = mid -1;
+			} else {
+				//search right
+				start = mid + 1;
+			}
+		}
+
+		if (start == end ) {
+			if (nums[start] == target) return start;
+		}
+		return -1;
+	}
+
+	private int searchRight(int[] nums, int start, int end, int target) {
+
+
+		while (start <= end) {
+			int mid = start + (end - start)/2;
+			if (nums[mid] == target) {
+				//search more
+				if ((mid == nums.length - 1) || nums[mid + 1] != target) {
+					//mid is the starting point
+					return mid;
+				} else {
+					start = mid + 1;
+				}
+			} else if(nums[mid] > target) {
+				//search left
+				end = mid -1;
+			} else {
+				//search right
+				start = mid + 1;
+			}
+		}
+
+		if (start == end ) {
+			if (nums[start] == target) return start;
+		}
+		return -1;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		FindFirstNLastSortedArr f = new FindFirstNLastSortedArr();
-		
+
 		int [] a1 = new int[] {5,7,7,8,8,10};
 		int [] o1 = f.searchRange(a1, 8);
-		
+
 		for (int i = 0; i<o1.length; i++) {
 			System.out.println("element "+i + " : "+o1[i]);
 		}
