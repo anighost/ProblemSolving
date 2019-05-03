@@ -1,6 +1,6 @@
 package problems.algo.search;
 
-public class FindSquareRoot {
+public class FindSquareRootNearest {
 	
     public static int mySqrt(int x) {
         if (x == 0 || x == 1) {
