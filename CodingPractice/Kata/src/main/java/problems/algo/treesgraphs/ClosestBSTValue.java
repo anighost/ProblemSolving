@@ -1,8 +1,5 @@
 package problems.algo.treesgraphs;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import problems.algo.utils.TreeNode;
 
 /*
@@ -10,14 +7,23 @@ import problems.algo.utils.TreeNode;
  */
 public class ClosestBSTValue {
 
-	LinkedList<Integer> res = new LinkedList<>();
+	int closesNode = Integer.MAX_VALUE;
 
     public int closestValue(TreeNode root, double target) {
+    	
+    	int min = root.val;
+    	
+    	while (root != null) {
+    		if(Math.abs(root.val - target) < Math.abs(min - target)) {
+    			min = root.val;
+    		}
+    		root = root.val > target ? root.left : root.right;
+    	}
         
+    	return min;
     }
-	
+    
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
