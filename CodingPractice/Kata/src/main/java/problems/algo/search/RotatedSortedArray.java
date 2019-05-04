@@ -1,4 +1,4 @@
-package problems.algo.array;
+package problems.algo.search;
 
 public class RotatedSortedArray {
     public static int search(int[] nums, int target) {

@@ -7,6 +7,7 @@ import java.util.Set;
 import problems.algo.utils.CommonUtils;
 
 /**
+ * https://leetcode.com/problems/intersection-of-two-arrays/
  * 
  * Given two arrays, write a function to compute their intersection.
 

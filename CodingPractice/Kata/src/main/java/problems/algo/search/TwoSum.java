@@ -1,12 +1,12 @@
-package problems.algo.array;
+package problems.algo.search;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 
+ * 	https://leetcode.com/problems/two-sum/
  * 
  *	Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
