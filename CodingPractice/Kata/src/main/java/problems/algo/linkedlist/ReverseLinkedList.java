@@ -1,5 +1,7 @@
 package problems.algo.linkedlist;
 
+import problems.algo.utils.ListNode;
+
 /*
  * Reverse a singly linked list.
 
@@ -13,18 +15,6 @@ package problems.algo.linkedlist;
  */
 public class ReverseLinkedList {
 
-	public class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
-		@Override
-		public String toString() {
-			return "ListNode [val=" + val + ", next=" + next + "]";
-		}
-		
-		
-	}
-	
 	public ListNode reverseList(ListNode head) {
 		
 		ListNode curr = head;
@@ -60,14 +50,14 @@ public class ReverseLinkedList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ReverseLinkedList r = new ReverseLinkedList();
-		ListNode head = r.new ListNode(1);
-		ListNode l1 = r.new ListNode(2);
+		ListNode head = new ListNode(1);
+		ListNode l1 = new ListNode(2);
 		head.next = l1;
-		ListNode l2 = r.new ListNode(3);
+		ListNode l2 = new ListNode(3);
 		l1.next = l2;
-		ListNode l3 = r.new ListNode(4);
+		ListNode l3 = new ListNode(4);
 		l2.next = l3;
-		ListNode l4 = r.new ListNode(5);
+		ListNode l4 = new ListNode(5);
 		l3.next = l4;
 		System.out.println(head);
 		

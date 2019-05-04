@@ -1,5 +1,8 @@
 package problems.algo.treesgraphs;
 
+import java.util.Arrays;
+import java.util.List;
+
 import problems.algo.utils.TreeNode;
 
 /**
@@ -27,40 +30,45 @@ as "[1,2,3,null,null,4,5]"
 
 public class Codec {
 
-	// Encodes a tree to a single string.
-	public String serialize(TreeNode root) {		
-		return dfsSerialize(root, "");
-	}
-
-	// Decodes your encoded data to tree.
-	public TreeNode deserialize(String data) {
-
-		TreeNode node = null;
-
-
-		return node;
-	}
-
-	//DFS Pre Order
-	public String dfsSerialize(TreeNode root, String str) {
-		// Recursive serialization.
-		if (root == null) {
-			str += "X,";
-		} else {
-			str += root.val + ",";
-			if (root.left == null && root.right == null) {
-				str += "'";				
-			} else {
-				str = dfsSerialize(root.left, str);
-				str = dfsSerialize(root.right, str);
-			}
-		}
-		return str;
-	}
-
-//	public String bfsSerialize(TreeNode root, String str) {
-//
-//	}
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        dfsSerialize(root,sb);
+        return sb.toString();
+    }
+    
+    private void dfsSerialize(TreeNode node, StringBuilder s) {
+        
+        //base
+        if (node == null) {
+            s.append("X,");
+        } else {
+            //val
+            s.append(node.val+",");
+            //left
+            dfsSerialize(node.left,s);
+            //right
+            dfsSerialize(node.right,s);
+        }
+    }
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String [] charArr = data.split(",");
+        List<String> chList = Arrays.asList(charArr);
+        return recurDS(chList);
+    }
+    
+    private TreeNode recurDS(List<String> chList) {
+        String s = chList.get(0);
+        chList.remove(0);	
+        if(s.equals("X")) return null;
+        TreeNode node = new TreeNode(Integer.parseInt(s));
+        node.left = recurDS(chList);
+        node.right = recurDS(chList);
+        
+        return node;
+    }
+    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Codec c = new Codec();
@@ -75,7 +83,11 @@ public class Codec {
 		root.right.left = left2;
 		root.right.right = right2;
 
-		System.out.println(c.serialize(root));
+		String data = c.serialize(root);
+		System.out.println(data);
+		TreeNode root1 = c.deserialize(data);
+		System.out.println(root1.toString());
+		
 
 
 	}

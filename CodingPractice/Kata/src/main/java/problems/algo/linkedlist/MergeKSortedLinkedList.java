@@ -1,5 +1,7 @@
 package problems.algo.linkedlist;
 
+import problems.algo.utils.ListNode;
+
 /**
  * 
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
@@ -18,12 +20,6 @@ package problems.algo.linkedlist;
  */
 
 public class MergeKSortedLinkedList {
-
-	public class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
-	}
 
 	//Linear Iteration
 	public ListNode mergeKListsLinear(ListNode[] lists) {
@@ -98,17 +94,17 @@ public class MergeKSortedLinkedList {
 		// TODO Auto-generated method stub
 		ListNode[] list = new ListNode[3];
 		MergeKSortedLinkedList m = new MergeKSortedLinkedList();
-		m.new ListNode(1);
-		ListNode l1 = m.new ListNode(1);		
-		l1.next = m.new ListNode(4);
-		l1.next.next = m.new ListNode(5);
+		new ListNode(1);
+		ListNode l1 = new ListNode(1);		
+		l1.next = new ListNode(4);
+		l1.next.next = new ListNode(5);
 
-		ListNode l2 = m.new ListNode(1);
-		l2.next = m.new ListNode(3);
-		l2.next.next = m.new ListNode(4);
+		ListNode l2 = new ListNode(1);
+		l2.next = new ListNode(3);
+		l2.next.next = new ListNode(4);
 
-		ListNode l3 = m.new ListNode(2);
-		l3.next = m.new ListNode(6);
+		ListNode l3 = new ListNode(2);
+		l3.next = new ListNode(6);
 
 		list[0] = l1;
 		list[1] = l2;

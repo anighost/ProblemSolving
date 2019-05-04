@@ -1,4 +1,7 @@
 package problems.algo.linkedlist;
+
+import problems.algo.utils.ListNode;
+
 /**
  * 
  * 	You are given two non-empty linked lists representing two non-negative integers. 
@@ -25,12 +28,6 @@ public class AddTwoNumbers {
 	 * };
 	 */
 
-	public class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
-	}
-	
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     	
     	ListNode dummy = new ListNode(0);
