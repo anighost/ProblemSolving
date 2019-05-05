@@ -2,11 +2,13 @@ package problems.algo.misc;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
+import problems.algo.utils.DoubleLinkedList;
+import problems.algo.utils.Node;
+
 /**
- * 
+ * https://leetcode.com/problems/max-stack/
  * Design a max stack that supports push, pop, top, peekMax and popMax.
 
 	push(x) -- Push element x onto stack.
@@ -34,77 +36,63 @@ import java.util.TreeMap;
 
  *
  */
-public class MyStackImpl2 {
+public class MaxStack {
 
-	List<Integer> maxStack;
-	Map<Integer, List<Integer>> map; 
+	DoubleLinkedList dll;
+	TreeMap<Integer, List<Node>> map;
+	
 
-	public MyStackImpl2() {
-		maxStack = new ArrayList<Integer>();
-		map = new TreeMap<Integer, List<Integer>>();
+	public MaxStack() {
+		dll = new DoubleLinkedList();
+		map = new TreeMap<Integer, List<Node>>();
 	}
 
 	public void push(int x) {
-		maxStack.add(x);
-		//Modify the map
-		List<Integer> list = map.get(x);;
-		if(map.get(x) == null){
-			list = new ArrayList<Integer>();
-			map.put(x,list);
-		}
 		
-		list.add(maxStack.size()-1);
+		//add to dll
+		Node node = dll.add(x);
+		//add to map
+		if(!map.containsKey(x) ) {
+			map.put(x,new ArrayList<Node>());
+		} 
+		map.get(x).add(node);
 	}
 
 	public int pop() {
-		int num = maxStack.get(maxStack.size()-1);
-		maxStack.remove(maxStack.size()-1);
-		
-		List<Integer> list = map.get(num);
-		list.remove(list.size() - 1);
+		int pop = dll.pop();
+		//remove from map
+		List<Node> list = map.get(pop);
+		list.remove(list.size()-1);
 		if(list.isEmpty()) {
-			map.remove(num);
+			map.remove(pop);
 		}
-		
-		return num;
+		return pop;
 	}
 
 	public int top() {
-		return maxStack.get(maxStack.size()-1);
+		return dll.peek();
 	}
 
 	public int peekMax() {
-		//Optimize Further
-		int maxNum = Integer.MIN_VALUE;
-		for (int i = 0; i < maxStack.size(); i++) {
-			if(maxNum <= maxStack.get(i)) {
-				maxNum = maxStack.get(i);
-			}
-		}
-
-		return maxNum;
-
+		return map.lastKey();
 	}
 
 	public int popMax() {
-		//Optimize Further
-		int pos = 0;
-		int maxNum = Integer.MIN_VALUE;
-
-		for (int i = 0; i < maxStack.size(); i++) {
-			if(maxNum <= maxStack.get(i)) {
-				maxNum = maxStack.get(i);
-				pos = i;
-			}
+		int lastKey = map.lastKey();
+		//remove from map
+		List<Node> list = map.get(lastKey);
+		Node node = list.remove(list.size()-1);
+		if(list.isEmpty()) {
+			map.remove(lastKey);
 		}
+		//remove from dll
+		dll.unlink(node);
 
-		maxStack.remove(pos);
-
-		return maxNum;
+		return lastKey;
 	}
 
 	public static void main(String[] args) {
-		MyStackImpl2 theStack = new MyStackImpl2(); 
+		MaxStack theStack = new MaxStack(); 
 		theStack.push(-2);
 		System.out.println(theStack.popMax());
 		theStack.push(-45);

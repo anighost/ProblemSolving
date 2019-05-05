@@ -106,6 +106,7 @@ public class Play {
         System.out.println(Integer.bitCount(7)); //111
         System.out.println(Integer.bitCount(8)); //1000
         
+        System.out.println(Integer.hashCode(11));
         System.out.println((int)'-');
         
 	}

@@ -10,7 +10,6 @@ public class MaxSiexSubArrayLength {
     public int maxSubArrayLenBrute(int[] nums, int k) {
         
         int maxSize = Integer.MIN_VALUE;
-        int l = 0, r = 0;
         int len = nums.length;
         for (int i = 0; i < len; i++) {
             int sum = 0;
