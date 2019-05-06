@@ -5,40 +5,28 @@ import java.util.List;
 import problems.algo.utils.NestedInteger;
 
 /*
- * https://leetcode.com/problems/nested-list-weight-sum-ii/
+ * https://leetcode.com/problems/nested-list-weight-sum/
  */
-public class NestedListWeightSum implements NestedInteger{
+public class NestedListWeightSum2 implements NestedInteger{
 
-    public int depthSumInverse(List<NestedInteger> nestedList) {
-        int maxDepth = getMaxDepth(nestedList);
-        return depthSum(nestedList, maxDepth);
+    public int depthSum(List<NestedInteger> nestedList) {
+        return recurSum(nestedList,1);
     }
     
-    private int depthSum(List<NestedInteger> nestedList, int depth) {
+    private int recurSum(List<NestedInteger> nestedList, int depth) {
+        //base - if nestedList is Empty
         int sum = 0;
         for (NestedInteger i : nestedList) {
             if (i.isInteger()) {
                 sum += depth * i.getInteger();
             } else {
-                sum += depthSum(i.getList(), depth-1);
+                sum += recurSum(i.getList(), depth+1);
             }
         }
         
         return sum;
     }
-    
-    private int getMaxDepth(List<NestedInteger> nestedList) {
-        int maxDepth = 0;
-        
-        for (NestedInteger i : nestedList) {
-            if (!i.isInteger()) {
-                maxDepth = Math.max(getMaxDepth(i.getList()),maxDepth);
-            }
-        }
-        
-        return 1 + maxDepth;
-    }
-    
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
