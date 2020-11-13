@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 
- * You have a set of cubes whose each side in an alphabet (which may be repeating).
+ * You have a set of cubes whose each side is an alphabet (which may be repeating).
  * Given an input string write a method to find whether the you can find all the characters of the string in the cubes.
  * You can take only 1 character from one cube.
  * 
