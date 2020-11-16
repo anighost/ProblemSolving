@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 
  * You have a set of cubes whose each side is an alphabet (which may be repeating).
- * Given an input string write a method to find whether the you can find all the characters of the string in the cubes.
+ * Given an input string write a method to find whether you can find all the characters of the string in the cubes.
  * You can take only 1 character from one cube.
  * 
  *  Assumption: No of cube is >= no of char in the input string
@@ -64,8 +64,8 @@ public class FindStringInCubes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s1 = "EGGPLA";
-		String s2 = "LOVELH";
+		String s1 = "LOVELH";
+		String s2 = "EGGPLA";
 		String s3 = "HHAGHC";
 		String s4 = "OSEEMM";
 		String s5 = "LLOYYD";
