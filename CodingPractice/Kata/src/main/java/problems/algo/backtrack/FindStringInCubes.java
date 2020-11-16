@@ -14,9 +14,9 @@ import java.util.List;
  *  Example:
  *  Cubes:
  *  
+ *  LOVELH - L
  *  EGGPLA - E
  *  HHAGHC - H
- *  LOVELH - L
  *  OSEEMM - O
  *  LLOYYD - L
  *  
